@@ -23,6 +23,13 @@
         </li>
 
       </ul>
+      <ul>
+        <li class="nav-item dropdown">
+          <% if user_signed_in? %>
+            <a class="navbar-brand nav-capital" href="#"><%= current_user.name %></a>
+          <% end %> 
+        </li>
+      </ul>
       
     </div>
   </div>

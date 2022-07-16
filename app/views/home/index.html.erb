@@ -1,2 +1,11 @@
 <h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+
+<% if user_signed_in? %>
+	<ul>
+	<% current_user.courses.each do |course| %>
+	   <li>Course Title: <%= course.title %></li>
+	   <li>Course Description: <%= course.description %></li>
+	<%end %>
+	</ul>
+<% end %>

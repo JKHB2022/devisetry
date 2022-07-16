@@ -71,6 +71,7 @@ group :test do
   gem "webdrivers"
 end
 
+gem 'sass-rails'
 gem "cssbundling-rails", "~> 1.1"
 gem 'devise'
 gem 'rails_admin', '~> 3.0'
