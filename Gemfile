@@ -78,3 +78,4 @@ gem 'rails_admin', '~> 3.0'
 gem "sassc-rails"
 gem 'figaro'
 gem 'pry'
+gem "font-awesome-sass", "~> 6.1.1"

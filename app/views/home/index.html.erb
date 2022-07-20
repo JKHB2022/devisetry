@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-
+<h3>Your Enrolled Courses</h3>
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Couses Enrolled</button>
@@ -9,23 +9,35 @@
 </nav>
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">	<ul>
-	<% @user_enrolled_courses.each do |course| %>
-	   <li>Course Title: <%= course.title %></li>
-	   <li>Course Description: <%= course.description %></li>
-	<%end %>
+	<% if @user_enrolled_courses.empty? %>
+		<p>No records found</p>
+	<% else %>
+		<% @user_enrolled_courses.each do |course| %>
+		   <li>Course Title: <%= course.title %></li>
+	 	  	<li>Course Description: <%= course.description %></li>
+	 	<% end %> 
+	<% end%>
 	</ul>
 </div>
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-  	<% @ongoing_courses.each do |course| %>
-	   <li>Course Title: <%= course.title %></li>
-	   <li>Course Description: <%= course.description %></li>
-	<%end %>
+  	<% if @ongoing_courses.empty? %>
+		<p>No records found</p>
+	<% else %>
+	  	<% @ongoing_courses.each do |course| %>
+		   <li>Course Title: <%= course.title %></li>
+		   <li>Course Description: <%= course.description %></li>
+		<% end %>
+	<% end %>
   </div>
   <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-  	<% @completed_courses.each do |course| %>
-	   <li>Course Title: <%= course.title %></li>
-	   <li>Course Description: <%= course.description %></li>
-	<%end %>
+  	<% if @completed_courses.empty? %>
+		<p>No records found</p>
+	<% else %>
+	  	<% @completed_courses.each do |course| %>
+		   <li>Course Title: <%= course.title %></li>
+		   <li>Course Description: <%= course.description %></li>
+		<% end %>
+	<% end %>
 
   </div>
   <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0"></div>
