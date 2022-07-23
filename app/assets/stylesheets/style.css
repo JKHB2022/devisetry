@@ -1,4 +1,8 @@
 
-.nav-capital{
-  text-transform: uppercase !important;
+.text-hide{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
