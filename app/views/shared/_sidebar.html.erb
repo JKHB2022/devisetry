@@ -1,0 +1,27 @@
+<% if user_signed_in? %>
+<nav class="navbar navbar-dark bg-primary fixed-left">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+ <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="bi bi-arrow-right"></i>
+Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+<div class="d-flex align-items-start navbar-dark navbar">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <a class="nav-link active" href="#home"><i class="fa fa-bar-chart" aria-hidden="true"></i>Dashboard</a>
+    <a class="nav-link " href="#courses"><i class="fa fa-television" aria-hidden="true"></i>Courses</a>
+    <a class="nav-link " href="#notification"><i class="bi bi-bell"></i>Notification</a>
+    <a class="nav-link " href="#certificate"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Certificate</a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+
+  <% end %>

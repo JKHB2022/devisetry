@@ -79,3 +79,10 @@ gem "sassc-rails"
 gem 'figaro'
 gem 'pry'
 gem "font-awesome-sass", "~> 6.1.1"
+gem 'google_sign_in'
+
+gem 'omniauth'
+
+gem 'omniauth-google-oauth2'
+
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
