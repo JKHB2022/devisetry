@@ -51,8 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_16_121941) do
   create_table "courses", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.boolean "ongoing_status"
-    t.boolean "completed_status"
+    t.boolean "ongoing_status", default: true
+    t.boolean "completed_status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -60,8 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_16_121941) do
   create_table "enrollments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "course_id"
-    t.boolean "ongoing_status"
-    t.boolean "completed_status"
+    t.boolean "ongoing_status", default: true
+    t.boolean "completed_status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -69,6 +69,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_16_121941) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "name"
+    t.string "uid"
+    t.string "provider"
+    t.boolean "admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -86,8 +90,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_16_121941) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.integer "age"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -89,4 +89,9 @@ ActionMailer::Base.smtp_settings = {
   :user_name => ENV["GMAIL_USERNAME"],
   :password => ENV["GMAIL_PASSWORD"]
 }
+
+
+  ENV['GOOGLE_OAUTH_CLIENT_ID'] 
+
+  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] 
 end
