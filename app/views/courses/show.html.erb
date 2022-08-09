@@ -1,3 +1,5 @@
+<!-- Course Description & Enrollment Page -->
+
 <p style="color: green"><%= notice %></p>
 
 <nav aria-label="breadcrumb">
@@ -16,6 +18,10 @@
     <h5 class="card-title"><%= @course.title%></h5>
     <p class="card-text"><%= @course.description  %></p>
     <p class="card-text"><small class="text-muted">Course Status: <% @course.ongoing_status ? puts("Ongoing") : puts("Completed") %></small></p>
+
+
+<!-- Enroll option -->
+
 
 <% if @status == true %>
   <button type="button" class="btn btn-secondary">Enrolled</button>

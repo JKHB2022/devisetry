@@ -8,8 +8,12 @@ class CoursesController < ApplicationController
 
   # GET /courses/1 or /courses/1.json
   def show
+    # Currently status is false 
     @status = false
+
     current_user_courses = current_user.courses.pluck(:id)
+
+    #If user already enrolled in the courses then set the status as true
     if current_user_courses.include? @course.id
       @status = true
     end
